@@ -56,6 +56,9 @@ $(() => {
 
 
         // Movie Info Start
+    const $moviesContainer = $('<div>').addClass('movies-container')
+    $body.append($moviesContainer)
+
     const $spiritedAwayBtn = $('<button>').text('Spirited Away')
     const $spiritedAwayDiv = $('<div>').addClass('movie').addClass('spiritedAway')
     $body.append($spiritedAwayBtn)

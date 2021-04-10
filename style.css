@@ -5,7 +5,9 @@
     align-items: center;
 }
 
-h2 {
+.tagline {
+    margin: 0 auto;
+    max-width: 500px;
     text-align: center;
 }
 
@@ -54,8 +56,9 @@ h2 {
 }
 .carousel-images {
   width: 80%;
-  height: 200px;
   display: flex;
+  height: 200px;
+  max-width: 700px;
   align-items: center;
   overflow: hidden;
   background: cadetblue;
@@ -89,6 +92,23 @@ h2 {
     display: block;
 }
 
-@media (max-width: 480px) {
-
+@media (min-width: 600px) {
+    .carousel-images {
+        height: 300px;
+    }
+}
+@media (min-width: 768px) {
+    .carousel-images {
+        height: 350px;
+    }
+}
+@media (min-width: 992px) {
+    .carousel-images {
+        height: 400px;
+    }
+}
+@media (min-width: 1200px) {
+    .carousel-images {
+        height: 500px;
+    }
 }
