@@ -9,7 +9,7 @@ h2 {
     text-align: center;
 }
 
-.menuButton {
+.menu-button {
   background-color: #4CAF50;
   color: white;
   padding: 16px;
@@ -22,7 +22,7 @@ h2 {
   display: inline-block;
 }
 
-.menuContent {
+.menu-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
@@ -31,19 +31,18 @@ h2 {
   z-index: 1;
 }
 
-.menuContent a {
+.menu-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.menuContent a:hover {background-color: #ddd;}
+.menu-content a:hover {background-color: #ddd;}
 
-.menu:hover .menuContent {display: block;}
+.menu:hover .menu-content {display: block;}
 
-.menu:hover .menuButton {background-color: #3e8e41;}
-
+.menu:hover .menu-button {background-color: #3e8e41;}
 
 
 .carousel-container {
