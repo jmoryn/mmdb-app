@@ -50,16 +50,23 @@ $(() => {
           currentImgIndex = numOfImages
         }
         $('.carousel-images').children().eq(currentImgIndex).css('display', 'block')
+    })
         // Carousel End
 
 
 
         // Movie Info Start
+    const $spiritedAwayBtn = $('<button>').text('Spirited Away')
     const $spiritedAwayDiv = $('<div>').addClass('movie').addClass('spiritedAway')
-    const $spiritedAwayBtn = $('<button>')
-    $spiritedAwayDiv.append($spiritedAwayBtn)
+    $body.append($spiritedAwayBtn)
+    $body.append($spiritedAwayDiv)
 
     $spiritedAwayBtn.on('click', (event)=>{
+        const $spiritedAwayHide = $('<button>').text('Hide').addClass('hide')
+        $spiritedAwayHide.on('click', event => {
+            $spiritedAwayDiv.empty()
+        })
+        $spiritedAwayDiv.append($spiritedAwayHide)
 
         $.ajax({
 
@@ -67,10 +74,15 @@ $(() => {
 
         }).then(
             (data)=>{
-                $('#title').html(data.data[0].attributes.titles.en)
-                $('#year').html(data.data[0].attributes.startDate.substring(0, 4));
-                const newImg = $('<img>').attr('src', data.data[0].attributes.posterImage.small);
-                $('body').append(newImg)
+                const $title = $('<h3>')
+                $spiritedAwayDiv.append($title)
+                $title.html(data.data[0].attributes.titles.en)
+
+                const $year = $('<h3>')
+                $spiritedAwayDiv.append($year)
+                $year.html(data.data[0].attributes.startDate.substring(0, 4));
+                const $newImg = $('<img>').attr('src', data.data[0].attributes.posterImage.small);
+                $spiritedAwayDiv.append($newImg)
             },
             ()=>{
                 console.log('bad request');
