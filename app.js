@@ -63,17 +63,17 @@ $(() => {
 
     const movieTitles = ["Lupin the Third", "Nausicaa of the Valley of the Wind", "Laputa: Castle in the Sky", "My Neighbor Totoro", "Kiki's Delivery Service", "Porco Rosso", "Princess Mononoke", "Spirited Away", "Howl's Moving Castle", "Ponyo", "The Wind Rises"]
 
-    const movieCode = ["lupin-iii-cagliostro-no-shiro", "nausicaa-of-the-valley-of-the-wind", "laputa-castle-in-the-sky", "my-neighbor-totoro", "kiki-s-delivery-service", "porco-rosso", "princess-mononoke", "spirited-away", "howl-s-moving-castle", "ponyo-on-the-cliff", "the-wind-rises"]
+    const movieCode = ["lupin-iii-cagliostro-no-shiro", "nausicaa-of-the-valley-of-the-wind", "laputa-castle-in-the-sky", "my-neighbor-totoro", "kiki-s-delivery-service", "porco-rosso", "princess-mononoke", "spirited-away", "howl-s-moving-castle", "ponyo-on-a-cliff", "the-wind-rises"]
 
 
     for (let i=0; i<11; i++) {
 
-        let movieBtn = $('<button>').text(movieTitles[i])
+        let movieBtn = $('<button>').text(movieTitles[i]).addClass(movieArray[i])
 
         let movieDiv = $('<div>').addClass('movie').addClass(movieArray[i])
 
-        $siteContainer.append(movieBtn)
-        $siteContainer.append(movieDiv)
+        $moviesContainer.append(movieBtn)
+        $moviesContainer.append(movieDiv)
 
         movieBtn.on('click', (event)=>{
             movieDiv.empty()
@@ -98,16 +98,20 @@ $(() => {
                     movieDiv.append($year)
                     $year.html(data.data[0].attributes.startDate.substring(0, 4));
 
-                    const $rating = $('<h3>')
-                    movieDiv.append($rating)
-                    $rating.html(data.data[0].attributes.ageRating)
+                    const $rated = $('<h3>')
+                    movieDiv.append($rated)
+                    $rated.html(data.data[0].attributes.ageRating)
+
+                    const $avgRating = $('<h3>')
+                    movieDiv.append($avgRating)
+                    $avgRating.html(data.data[0].attributes.averageRating)
 
                     const $synopsis = $('<p>')
                     movieDiv.append($synopsis)
                     $synopsis.html(data.data[0].attributes.synopsis)
 
-                    const $newImg = $('<img>').attr('src', data.data[0].attributes.posterImage.small);
-                    movieDiv.append($newImg)
+                    const $poster = $('<img>').attr('src', data.data[0].attributes.posterImage.small);
+                    movieDiv.append($poster)
                 },
                 ()=>{
                     console.log('bad request');
