@@ -1,9 +1,9 @@
 $(() => {
-    const $body = $('body')
+    const $siteContainer = $('.site-container')
 
     // Carousel Code Start
     const $carouselContainer = $('<div>').addClass('carousel-container')
-    $body.append($carouselContainer)
+    $siteContainer.append($carouselContainer)
 
     const $previous = $('<div>').addClass('carousel-button').addClass('previous')
     $carouselContainer.append($previous)
@@ -57,39 +57,62 @@ $(() => {
 
         // Movie Info Start
     const $moviesContainer = $('<div>').addClass('movies-container')
-    $body.append($moviesContainer)
+    $siteContainer.append($moviesContainer)
 
-    const $spiritedAwayBtn = $('<button>').text('Spirited Away')
-    const $spiritedAwayDiv = $('<div>').addClass('movie').addClass('spiritedAway')
-    $body.append($spiritedAwayBtn)
-    $body.append($spiritedAwayDiv)
+    const movieArray = ["lupin", "nausicaa", "laputa", "totoro", "kikis", "porco", "mononoke", "spirited", "howls", "ponyo", "wind"]
 
-    $spiritedAwayBtn.on('click', (event)=>{
-        const $spiritedAwayHide = $('<button>').text('Hide').addClass('hide')
-        $spiritedAwayHide.on('click', event => {
-            $spiritedAwayDiv.empty()
+    const movieTitles = ["Lupin the Third", "Nausicaa of the Valley of the Wind", "Laputa: Castle in the Sky", "My Neighbor Totoro", "Kiki's Delivery Service", "Porco Rosso", "Princess Mononoke", "Spirited Away", "Howl's Moving Castle", "Ponyo", "The Wind Rises"]
+
+    const movieCode = ["lupin-iii-cagliostro-no-shiro", "nausicaa-of-the-valley-of-the-wind", "laputa-castle-in-the-sky", "my-neighbor-totoro", "kiki-s-delivery-service", "porco-rosso", "princess-mononoke", "spirited-away", "howl-s-moving-castle", "ponyo-on-the-cliff", "the-wind-rises"]
+
+
+    for (let i=0; i<11; i++) {
+
+        let movieBtn = $('<button>').text(movieTitles[i])
+
+        let movieDiv = $('<div>').addClass('movie').addClass(movieArray[i])
+
+        $siteContainer.append(movieBtn)
+        $siteContainer.append(movieDiv)
+
+        movieBtn.on('click', (event)=>{
+            movieDiv.empty()
+
+            let movieHide = $('<button>').text('Hide').addClass('hide')
+            movieHide.on('click', event => {
+                movieDiv.empty()
+            })
+            movieDiv.append(movieHide)
+
+            $.ajax({
+
+                url:'https://kitsu.io/api/edge/anime?filter[slug]=' + movieCode[i]
+
+            }).then(
+                (data)=>{
+                    const $title = $('<h3>')
+                    movieDiv.append($title)
+                    $title.html(data.data[0].attributes.titles.en)
+
+                    const $year = $('<h3>')
+                    movieDiv.append($year)
+                    $year.html(data.data[0].attributes.startDate.substring(0, 4));
+
+                    const $rating = $('<h3>')
+                    movieDiv.append($rating)
+                    $rating.html(data.data[0].attributes.ageRating)
+
+                    const $synopsis = $('<p>')
+                    movieDiv.append($synopsis)
+                    $synopsis.html(data.data[0].attributes.synopsis)
+
+                    const $newImg = $('<img>').attr('src', data.data[0].attributes.posterImage.small);
+                    movieDiv.append($newImg)
+                },
+                ()=>{
+                    console.log('bad request');
+                }
+            );
         })
-        $spiritedAwayDiv.append($spiritedAwayHide)
-
-        $.ajax({
-
-            url:'https://kitsu.io/api/edge/anime?filter[slug]=spirited-away'
-
-        }).then(
-            (data)=>{
-                const $title = $('<h3>')
-                $spiritedAwayDiv.append($title)
-                $title.html(data.data[0].attributes.titles.en)
-
-                const $year = $('<h3>')
-                $spiritedAwayDiv.append($year)
-                $year.html(data.data[0].attributes.startDate.substring(0, 4));
-                const $newImg = $('<img>').attr('src', data.data[0].attributes.posterImage.small);
-                $spiritedAwayDiv.append($newImg)
-            },
-            ()=>{
-                console.log('bad request');
-            }
-        );
-    })
+    }
 })

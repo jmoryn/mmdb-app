@@ -1,3 +1,7 @@
+.site-container {
+    max-width: 1000px;
+}
+
 .top {
     margin: 10px 30px;
     display: flex;
@@ -92,6 +96,12 @@
     display: block;
 }
 
+.movies-container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+}
+
 @media (min-width: 600px) {
     .carousel-images {
         height: 300px;
@@ -102,13 +112,8 @@
         height: 350px;
     }
 }
-@media (min-width: 992px) {
+@media (min-width: 1000px) {
     .carousel-images {
         height: 400px;
-    }
-}
-@media (min-width: 1200px) {
-    .carousel-images {
-        height: 500px;
     }
 }
