@@ -45,11 +45,8 @@
   display: block;
 }
 
-.menu-content div:hover {background-color: #ddd;}
-
 .menu:hover .menu-content {display: block;}
 
-.menu:hover .menu-button {background-color: #3e8e41;}
 
 
 .carousel-container {
