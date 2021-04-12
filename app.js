@@ -119,4 +119,18 @@ $(() => {
             );
         })
     }
+    const newOldSort = () => {
+        $('.lupin').detach().prependTo($moviesContainer)
+        $('.nausicaa').detach().prependTo($moviesContainer)
+        $('.laputa').detach().prependTo($moviesContainer)
+        $('.totoro').detach().prependTo($moviesContainer)
+        $('.kikis').detach().prependTo($moviesContainer)
+        $('.porco').detach().prependTo($moviesContainer)
+        $('.mononoke').detach().prependTo($moviesContainer)
+        $('.spirited').detach().prependTo($moviesContainer)
+        $('.howls').detach().prependTo($moviesContainer)
+        $('.ponyo').detach().prependTo($moviesContainer)
+        $('.wind').detach().prependTo($moviesContainer)
+        }
+    $('#new-to-old').on('click', newOldSort)
 })
