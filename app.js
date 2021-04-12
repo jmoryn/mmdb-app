@@ -65,15 +65,19 @@ $(() => {
 
     const movieCode = ["lupin-iii-cagliostro-no-shiro", "nausicaa-of-the-valley-of-the-wind", "laputa-castle-in-the-sky", "my-neighbor-totoro", "kiki-s-delivery-service", "porco-rosso", "princess-mononoke", "spirited-away", "howl-s-moving-castle", "ponyo-on-a-cliff", "the-wind-rises"]
 
+    const backgroundArray = ["https://media.kitsu.io/anime/cover_images/1283/tiny.jpg?1597702465", "https://media.kitsu.io/anime/cover_images/529/tiny.jpg?1597702984", "https://media.kitsu.io/anime/cover_images/472/tiny.jpg?1597700973", "https://media.kitsu.io/anime/cover_images/482/tiny.jpg?1597702248", "https://media.kitsu.io/anime/cover_images/471/small.jpg", "https://media.kitsu.io/anime/cover_images/380/tiny.jpg?1597703067", "https://media.kitsu.io/anime/cover_images/142/tiny.jpg?1597702982", "https://media.kitsu.io/anime/cover_images/176/tiny.jpg?1597701014", "https://media.kitsu.io/anime/cover_images/395/tiny.jpg?1597701447", "https://media.kitsu.io/anime/cover_images/2624/tiny.jpg?1597702710", "https://media.kitsu.io/anime/cover_images/7485/tiny.jpg?1597702596"]
 
     for (let i=0; i<11; i++) {
 
-        let movieBtn = $('<button>').text(movieTitles[i]).addClass(movieArray[i])
+        let movieBtn = $('<button>').text(movieTitles[i]).addClass(movieArray[i]).addClass('movie-btn').css('background-image', 'url(' + backgroundArray[i] + ')')
+
 
         let movieDiv = $('<div>').addClass('movie').addClass(movieArray[i])
 
         $moviesContainer.append(movieBtn)
         $moviesContainer.append(movieDiv)
+
+
 
         movieBtn.on('click', (event)=>{
             movieDiv.empty()
