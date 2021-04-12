@@ -108,7 +108,7 @@ $(() => {
 
                     const $avgRating = $('<h3>')
                     movieDiv.append($avgRating)
-                    $avgRating.html(data.data[0].attributes.averageRating)
+                    $avgRating.html('Avg Rating: ' + data.data[0].attributes.averageRating)
 
                     const $synopsis = $('<p>')
                     movieDiv.append($synopsis)
