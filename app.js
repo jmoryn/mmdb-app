@@ -11,20 +11,15 @@ $(() => {
     const $carouselImages = $('<div>').addClass('carousel-images')
     $carouselContainer.append($carouselImages)
 
-    const $firstImage = $('<img>').attr('src', 'https://i.imgur.com/f7blZMv.jpg').attr('alt', 'miyazaki with cat')
-    $carouselImages.append($firstImage)
+    const carouselImgLinks = ['https://i.imgur.com/f7blZMv.jpg', 'https://i.imgur.com/jT4KfgY.jpeg', 'https://i.imgur.com/OSVWxBU.jpg', 'https://i.imgur.com/wuUTQGB.jpg', 'https://i.imgur.com/PzILz8Q.jpeg', 'https://i.imgur.com/EWvSRCI.jpg']
 
-    const $secondImage = $('<img>').attr('src', 'https://i.imgur.com/jT4KfgY.jpeg').attr('alt', 'miyazaki with totoro stuffed animal')
-    $carouselImages.append($secondImage)
+    const carouselImgAlts = ['miyazaki with cat', 'miyazaki with totoro stuffed animal', 'miyazaki with drawings', 'miyazaki smoking a cigarette and smiling', 'miyazaki with oscar statue', 'miyazaki with ponyo poster in background']
 
-    const $thirdImage = $('<img>').attr('src', 'https://i.imgur.com/OSVWxBU.jpg').attr('alt', 'miyazaki with drawings')
-    $carouselImages.append($thirdImage)
+    for (let i=0; i<carouselImgLinks.length; i++) {
+        const $carouselImage = $('<img>').attr('src', carouselImgLinks[i]).attr('alt', carouselImgAlts[i])
+        $carouselImages.append($carouselImage)
+    }
 
-    const $fourthImage = $('<img>').attr('src', 'https://i.imgur.com/wuUTQGB.jpg').attr('alt', 'miyazaki smoking a cigarette and smiling')
-    $carouselImages.append($fourthImage)
-
-    const $fifthImage = $('<img>').attr('src', 'https://i.imgur.com/PzILz8Q.jpeg').attr('alt', 'miyazaki with oscar statue')
-    $carouselImages.append($fifthImage)
 
     const $next = $('<div>').addClass('carousel-button').addClass('next')
     $carouselContainer.append($next)

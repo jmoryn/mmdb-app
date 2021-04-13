@@ -1,23 +1,23 @@
 /* Palette found at https://uxdesign.cc/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129 */
 :root {
-  --fifty: #f0f4f8;
-  --onehundred: #d9e2ec;
-  --twohundred: #bcccdc;
-  --threehundred: #9fb3cb;
-  --fourhundred: #829ab1;
-  --fivehundred: #627d98;
-  --sixhundred: #486581;
-  --sevenhundred: #334e68;
-  --eighthundred: #243b53;
-  --ninehundred: #102a43;
+  --zero: #f0f4f8;
+  --one: #d9e2ec;
+  --two: #bcccdc;
+  --three: #9fb3cb;
+  --four: #829ab1;
+  --five: #627d98;
+  --six: #486581;
+  --seven: #334e68;
+  --eight: #243b53;
+  --nine: #102a43;
 }
 
 body {
-    background-color: var(--ninehundred);
+    background-color: var(--nine);
 }
 .site-container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 200px auto;
 }
 .top {
     margin: 10px 30px;
@@ -26,8 +26,8 @@ body {
     align-items: center;
 }
 .logo {
-    background-color: var(--sevenhundred);
-    color: var(--fifty);
+    background-color: var(--seven);
+    color: var(--zero);
     font-family: 'Antonio', sans-serif;
     border-radius: 10px;
     padding: 0 15px;
@@ -39,7 +39,7 @@ body {
     margin: 0 auto;
     max-width: 500px;
     text-align: center;
-    color: var(--onehundred);
+    color: var(--one);
     font-family: 'Oswald', sans-serif;
 }
 
@@ -103,7 +103,7 @@ body {
   max-width: 700px;
   align-items: center;
   overflow: hidden;
-  background: var(--fivehundred);
+  background: var(--five);
   padding: 10px;
   border-radius: 10px;
   box-sizing: border-box;
@@ -115,7 +115,7 @@ body {
 }
 .carousel-button {
   align-self: center;
-  background: var(--threehundred);
+  background: var(--three);
   color: #888;
   padding: 20px 10px;
   border-radius: 35%;
@@ -123,7 +123,7 @@ body {
 }
 .carousel-button:hover {
   cursor: pointer;
-  background: var(--sevenhundred);
+  background: var(--seven);
   color: white;
 }
 .carousel-images img:first-of-type {
@@ -200,6 +200,9 @@ body {
     .carousel-images {
         height: 400px;
     }
+    .movie {
+        padding-bottom: 0;
+    }
     .movie h3 {
         width: 60%;
         float: left;
@@ -215,7 +218,10 @@ body {
     }
     .movie img {
         position: relative;
-        top: -125px;
+        top: -165px;
+        float: right;
+    }
+    .hide {
         float: right;
     }
 }
