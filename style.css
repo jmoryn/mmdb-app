@@ -1,40 +1,45 @@
+/* Palette found at https://uxdesign.cc/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129 */
 :root {
-  --red: #ef476f;
-  --yellow: #ffd166;
-  --green: #06d6a0;
-  --blue: #118ab2;
-  --darkblue: #073b4c;
-  --darkgray: #212121;
+  --fifty: #f0f4f8;
+  --onehundred: #d9e2ec;
+  --twohundred: #bcccdc;
+  --threehundred: #9fb3cb;
+  --fourhundred: #829ab1;
+  --fivehundred: #627d98;
+  --sixhundred: #486581;
+  --sevenhundred: #334e68;
+  --eighthundred: #243b53;
+  --ninehundred: #102a43;
 }
 
 body {
-    background-color: #102a43;
+    background-color: var(--ninehundred);
 }
-
 .site-container {
     max-width: 1000px;
 }
-
 .top {
     margin: 10px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .logo {
-    background-color: #334e68;
-    color: white;
+    background-color: var(--sevenhundred);
+    color: var(--fifty);
+    font-family: 'Antonio', sans-serif;
     border-radius: 10px;
     padding: 0 15px;
 }
-
-
+.logo h1 {
+    transform: scale(.9, 1.2);
+}
 .tagline {
     margin: 0 auto;
     max-width: 500px;
     text-align: center;
-    color: #d9e2ec;
+    color: var(--onehundred);
+    font-family: 'Oswald', sans-serif;
 }
 
 /* Menu styling */
@@ -42,15 +47,15 @@ body {
   background-color: #829ab1;
   color: #d9e2ec;
   padding: 16px;
-  font-size: 16px;
+  font-size: 20px;
+  border-radius: 5px;
   border: none;
+  font-family: 'Oswald', sans-serif;
 }
-
 .menu {
   position: relative;
   display: inline-block;
 }
-
 .menu-content {
   display: none;
   position: absolute;
@@ -59,27 +64,23 @@ body {
   min-width: 160px;
   z-index: 1;
 }
-
 .menu-content div {
   color: #102a43;
   border: 1px solid black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-family: 'Oswald', sans-serif;
 }
-
 #default {
     border-bottom: none;
 }
-
 #new-to-old {
     border-bottom: none;
 }
-
 .menu-content a {
   text-decoration: none;
 }
-
 .menu:hover .menu-content {
     display: block;
     cursor: pointer;
@@ -101,11 +102,10 @@ body {
   max-width: 700px;
   align-items: center;
   overflow: hidden;
-  background: cadetblue;
+  background: var(--fivehundred);
   padding: 10px;
   border-radius: 10px;
   box-sizing: border-box;
-  box-shadow: 2px 2px #f2cd99;
 }
 .carousel-images img {
   width: 100%;
@@ -114,23 +114,22 @@ body {
 }
 .carousel-button {
   align-self: center;
-  background: #f2cd99;
+  background: var(--threehundred);
   color: #888;
-  padding: 10px;
-  border-radius: 50%;
+  padding: 20px 10px;
+  border-radius: 35%;
   text-align: center;
-  box-shadow: 1px 1px #fa8d8e;
 }
 .carousel-button:hover {
   cursor: pointer;
-  background: #fa8d8e;
-  box-shadow: 1px 1px #f2cd99;
+  background: var(--sevenhundred);
   color: white;
 }
-
 .carousel-images img:first-of-type {
     display: block;
 }
+
+/* Button / Div Styling */
 
 .movies-container {
     display: flex;
@@ -138,8 +137,6 @@ body {
     margin: 30px auto;
     align-items: center;
 }
-
-/* Button / Div Styling */
 
 .movie-btn {
     width: 80%;
@@ -152,7 +149,12 @@ body {
 }
 
 .movie {
+    width: 80%;
     color: #d9e2ec;
+    font-family: 'Oswald', sans-serif;
+}
+.movie p {
+    font-family: 'Roboto', sans-serif;
 }
 /* Responsive changes */
 

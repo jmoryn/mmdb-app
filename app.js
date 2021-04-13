@@ -124,7 +124,6 @@ $(() => {
         })
     }
     const newOldSort = () => {
-        $('.lupin').detach().prependTo($moviesContainer)
         $('.nausicaa').detach().prependTo($moviesContainer)
         $('.laputa').detach().prependTo($moviesContainer)
         $('.totoro').detach().prependTo($moviesContainer)
