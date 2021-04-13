@@ -98,16 +98,20 @@ $(() => {
                     movieDiv.append($title)
                     $title.html(data.data[0].attributes.titles.en)
 
-                    const $year = $('<h3>')
-                    movieDiv.append($year)
+                    const attrDiv = $('<div>')
+                    attrDiv.addClass('attr')
+                    movieDiv.append(attrDiv)
+
+                    const $year = $('<h4>')
+                    attrDiv.append($year)
                     $year.html(data.data[0].attributes.startDate.substring(0, 4));
 
-                    const $rated = $('<h3>')
-                    movieDiv.append($rated)
+                    const $rated = $('<h4>')
+                    attrDiv.append($rated)
                     $rated.html(data.data[0].attributes.ageRating)
 
-                    const $avgRating = $('<h3>')
-                    movieDiv.append($avgRating)
+                    const $avgRating = $('<h4>')
+                    attrDiv.append($avgRating)
                     $avgRating.html('Avg Rating: ' + data.data[0].attributes.averageRating)
 
                     const $synopsis = $('<p>')

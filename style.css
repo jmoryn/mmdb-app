@@ -17,6 +17,7 @@ body {
 }
 .site-container {
     max-width: 1000px;
+    margin: 0 auto;
 }
 .top {
     margin: 10px 30px;
@@ -154,8 +155,22 @@ body {
     color: #d9e2ec;
     font-family: 'Oswald', sans-serif;
 }
+.attr {
+    display: flex;
+    justify-content: space-around;
+}
+.movie h3 {
+    text-align: center;
+    font-size: 2em;
+}
 .movie p {
     font-family: 'Roboto', sans-serif;
+    text-align: justify;
+}
+.movie img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* Responsive changes */
 
@@ -184,5 +199,23 @@ body {
 @media (min-width: 1000px) {
     .carousel-images {
         height: 400px;
+    }
+    .movie h3 {
+        width: 60%;
+        float: left;
+    }
+    .attr {
+        font-size: 1.5em;
+        width: 60%;
+        float: left;
+    }
+    .movie p {
+        width: 60%;
+        display: inline-block;
+    }
+    .movie img {
+        position: relative;
+        top: -125px;
+        float: right;
     }
 }
