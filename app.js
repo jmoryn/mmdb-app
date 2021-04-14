@@ -1,6 +1,11 @@
 $(() => {
     const $siteContainer = $('.site-container')
 
+    // collapsible Start
+    $('.collapsible-button').on('click', (event) => {
+        $('.collapsible-content').slideToggle('slow')
+    })
+
     // Carousel Code Start
     const $carouselContainer = $('<div>').addClass('carousel-container')
     $siteContainer.append($carouselContainer)
@@ -14,7 +19,7 @@ $(() => {
     const carouselImgLinks = ['https://i.imgur.com/f7blZMv.jpg', 'https://i.imgur.com/jT4KfgY.jpeg', 'https://i.imgur.com/OSVWxBU.jpg', 'https://i.imgur.com/wuUTQGB.jpg', 'https://i.imgur.com/PzILz8Q.jpeg', 'https://i.imgur.com/EWvSRCI.jpg', 'https://i.imgur.com/ijU49lH.jpg', 'https://i.imgur.com/fgvFFtW.jpg', 'https://i.imgur.com/cqwNo3t.jpg']
 
     const carouselImgAlts = ['miyazaki with cat', 'miyazaki with totoro stuffed animal', 'miyazaki with drawings', 'miyazaki smoking a cigarette and smiling', 'miyazaki with oscar statue', 'miyazaki with ponyo poster in background', 'miyazaki in greyscale', 'miyazaki chopping wood', 'miyazaki with andy serkis']
-
+    // create carousel images from the imgLinks and imgAlts arrays
     for (let i=0; i<carouselImgLinks.length; i++) {
         const $carouselImage = $('<img>').attr('src', carouselImgLinks[i]).attr('alt', carouselImgAlts[i])
         $carouselImages.append($carouselImage)
@@ -67,7 +72,9 @@ $(() => {
 
     const backgroundArray = ["https://media.kitsu.io/anime/cover_images/1283/tiny.jpg?1597702465", "https://media.kitsu.io/anime/cover_images/529/tiny.jpg?1597702984", "https://media.kitsu.io/anime/cover_images/472/tiny.jpg?1597700973", "https://media.kitsu.io/anime/cover_images/482/tiny.jpg?1597702248", "https://media.kitsu.io/anime/cover_images/471/small.jpg", "https://media.kitsu.io/anime/cover_images/380/tiny.jpg?1597703067", "https://media.kitsu.io/anime/cover_images/142/tiny.jpg?1597702982", "https://media.kitsu.io/anime/cover_images/176/tiny.jpg?1597701014", "https://media.kitsu.io/anime/cover_images/395/tiny.jpg?1597701447", "https://media.kitsu.io/anime/cover_images/2624/tiny.jpg?1597702710", "https://media.kitsu.io/anime/cover_images/7485/tiny.jpg?1597702596"]
 
+
     for (let i=0; i<11; i++) {
+
 
         let movieBtn = $('<button>').text(movieTitles[i]).addClass(movieArray[i]).addClass('movie-btn').css('background-image', 'url(' + backgroundArray[i] + ')')
 
@@ -140,4 +147,19 @@ $(() => {
         $('.wind').detach().prependTo($moviesContainer)
         }
     $('#new-to-old').on('click', newOldSort)
+
+    const imdbSort = () => {
+        $('.lupin').detach().prependTo($moviesContainer)
+        $('.porco').detach().prependTo($moviesContainer)
+        $('.ponyo').detach().prependTo($moviesContainer)
+        $('.wind').detach().prependTo($moviesContainer)
+        $('.kikis').detach().prependTo($moviesContainer)
+        $('.laputa').detach().prependTo($moviesContainer)
+        $('.nausicaa').detach().prependTo($moviesContainer)
+        $('.totoro').detach().prependTo($moviesContainer)
+        $('.howls').detach().prependTo($moviesContainer)
+        $('.mononoke').detach().prependTo($moviesContainer)
+        $('.spirited').detach().prependTo($moviesContainer)
+        }
+    $('#imdb-sort').on('click', imdbSort)
 })
