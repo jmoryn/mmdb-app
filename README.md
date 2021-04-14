@@ -1,5 +1,6 @@
 # mmdb-app
 <h1>Miyazaki Movie Database</h1>
+Link to site: https://vigilant-hoover-0d8e08.netlify.app/
 
 The Miyazaki Movie Database holds information on the 11 feature films created by Japanese animator Hayao Miyazaki. Sometimes called "the Walt Disney of Japan," Miyazaki's films have inspired and delighted people around the world for more than 40 years. With loveable characters, rich storylines, and many relatable themes, it's no wonder his films continue to be relevant long after their release. The MMDb aims to be a catalogue of these films, where users can see information such as release dates, ratings, synopses and more.
 
@@ -17,9 +18,9 @@ The carousel is made using jQuery. For the images, I used links from imgur to re
 
 Instead of downloading and manually resizing/cropping the images, I opted instead to change their display to flex then align them in the center with overflow hidden. This served its purpose in allowing the user to cycle through photos with the carousel in the same place, although some of the images are cut off a bit due to the different aspect ratios. To remedy this, I set progressively larger max heights to media queries as the screen width increases, ensuring the larger photos have enough space to display.
 
-To create an autoscroll feature, I simply nested the "next button" event into its own function called scroll, then added a setInterval function to it. I then made it so it also calls the scroll function on next button click.
+To create an autoscroll feature, I simply nested the "next button" event into its own function called scroll, then added a setInterval function to it. I then made it so it also calls the scroll function on when the next button is clicked.
 
-I tried to make it so the autoscroll would stop when you hovered over a carousel image, but I couldn't quite get it to work so I scrapped it.
+I tried to make it so the autoscroll would stop when you hovered over a carousel image, but I couldn't quite figure it out so I scrapped the idea.
 
 <h2>Movie Buttons</h2>
 For the movie buttons, I looped through various arrays to populate the information I needed. My AJAX call takes the movie name from the movieCode array to access the correct movie in Kitsu API, then it fills the movie div with the info I grab. A call is performed when a user clicks one of the movie buttons.
