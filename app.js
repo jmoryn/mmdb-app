@@ -37,6 +37,7 @@ $(() => {
         }
         $('.carousel-images').children().eq(currentImgIndex).css('display', 'block')
     }
+
     setInterval(scroll, 7000);
 
     $('.next').on('click', scroll)

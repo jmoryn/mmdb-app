@@ -43,6 +43,8 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+
+
 /* Menu styling */
 .menu-button {
   background-color: #829ab1;
@@ -52,6 +54,7 @@ body {
   border-radius: 5px;
   border: none;
   font-family: 'Oswald', sans-serif;
+  box-shadow: 4px 4px 10px var(--six);
 }
 .menu {
   position: relative;
@@ -88,6 +91,8 @@ body {
 }
 
 
+
+
 /* Carousel Styling */
 .carousel-container {
   width: 70%;
@@ -107,6 +112,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   box-sizing: border-box;
+  box-shadow: 7px 7px 15px var(--six);
 }
 .carousel-images img {
   width: 100%;
@@ -120,40 +126,62 @@ body {
   padding: 20px 10px;
   border-radius: 35%;
   text-align: center;
+  box-shadow: 4px 4px 10px var(--six);
 }
 .carousel-button:hover {
   cursor: pointer;
-  background: var(--seven);
+  background: var(--six);
   color: white;
+  transform: translateY(-3px);
 }
 .carousel-images img:first-of-type {
     display: block;
 }
 
-/* Button / Div Styling */
 
+
+
+
+/* Button / Div Styling */
 .movies-container {
     display: flex;
     flex-direction: column;
     margin: 30px auto;
     align-items: center;
 }
-
 .movie-btn {
     width: 80%;
     height: 150px;
-    margin: 10px;
+    margin: 15px 10px;
     color: white;
     font-size: 2em;
     font-family: 'Oswald', sans-serif;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background-position: center;
+    box-shadow: 5px 5px 15px var(--four);
+    transform: translateY(5px);
+    transition: .3s;
 }
-
+.movie-btn:hover {
+    transform: translateY(-5px);
+    transition: .3s;
+    cursor: pointer;
+}
 .movie {
     width: 80%;
     color: #d9e2ec;
     font-family: 'Oswald', sans-serif;
+}
+.hide {
+    color: var(--nine);
+    background: var(--three);
+    font-family: 'Oswald', sans-serif;
+    border-radius: 5px;
+}
+.hide:hover {
+      transform: translateY(-2px);
+      background: var(--five);
+      cursor: pointer;
 }
 .attr {
     display: flex;
@@ -172,6 +200,10 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
+
 /* Responsive changes */
 
 @media (min-width: 400px) {
