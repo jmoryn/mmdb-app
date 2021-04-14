@@ -6,6 +6,9 @@ The Miyazaki Movie Database holds information on the 11 feature films created by
 <h2>Basic Site Info</h2>
 The site was created using a combination of HTML, CSS, JS and jQuery. For the color palette, I found it at https://uxdesign.cc/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129. Since I knew I wanted to design the site with a dark mode as the default, I searched around on google until I found something appealing, then made variables at the top of my css for each color.
 
+<h2>Collapsible Info</h2>
+The collapsible div w/ button was added last, as I realized that many people probably don't know who Miyazaki is, so I wrote a few paragraphs about him and put it all above the carousel. To make it work, I started by researching how collapsible divs work and my first implementation just used toggleClass with a new class called show that set the paragraph display from none to block. That didn't give me the animation I desired so I did some more research and found out about slideIn and slideOut. Shortly after struggling to get it to go back up, I found out there's actually just a slideToggle method which was exactly what I needed.
+
 <h2>Menu</h2>
 The menu in the top right has three sort options. The first is the default which is oldest to newest - by clicking this option, it actually just reloads the page. The second option sorts by newest to oldest and calls a function that reorders all the divs by class. First it detaches the divs, then it prepends them to the moviesContainer so that they all end up in reverse order. I tried to loop through an array to grab the classes in order in my function but I couldn't figure out a syntax that works so I ended up hardcoding it. The final sort (IMDb rating) is another hardcoded function that reorders the divs when you click it.
 
