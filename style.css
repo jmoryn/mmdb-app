@@ -76,6 +76,7 @@ body {
     font-size: 18px;
     color: var(--one);
     display: none;
+    text-align: justify;
 }
 
 
