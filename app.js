@@ -11,9 +11,9 @@ $(() => {
     const $carouselImages = $('<div>').addClass('carousel-images')
     $carouselContainer.append($carouselImages)
 
-    const carouselImgLinks = ['https://i.imgur.com/f7blZMv.jpg', 'https://i.imgur.com/jT4KfgY.jpeg', 'https://i.imgur.com/OSVWxBU.jpg', 'https://i.imgur.com/wuUTQGB.jpg', 'https://i.imgur.com/PzILz8Q.jpeg', 'https://i.imgur.com/EWvSRCI.jpg']
+    const carouselImgLinks = ['https://i.imgur.com/f7blZMv.jpg', 'https://i.imgur.com/jT4KfgY.jpeg', 'https://i.imgur.com/OSVWxBU.jpg', 'https://i.imgur.com/wuUTQGB.jpg', 'https://i.imgur.com/PzILz8Q.jpeg', 'https://i.imgur.com/EWvSRCI.jpg', 'https://i.imgur.com/ijU49lH.jpg', 'https://i.imgur.com/fgvFFtW.jpg', 'https://i.imgur.com/cqwNo3t.jpg']
 
-    const carouselImgAlts = ['miyazaki with cat', 'miyazaki with totoro stuffed animal', 'miyazaki with drawings', 'miyazaki smoking a cigarette and smiling', 'miyazaki with oscar statue', 'miyazaki with ponyo poster in background']
+    const carouselImgAlts = ['miyazaki with cat', 'miyazaki with totoro stuffed animal', 'miyazaki with drawings', 'miyazaki smoking a cigarette and smiling', 'miyazaki with oscar statue', 'miyazaki with ponyo poster in background', 'miyazaki in greyscale', 'miyazaki chopping wood', 'miyazaki with andy serkis']
 
     for (let i=0; i<carouselImgLinks.length; i++) {
         const $carouselImage = $('<img>').attr('src', carouselImgLinks[i]).attr('alt', carouselImgAlts[i])
@@ -28,7 +28,7 @@ $(() => {
     let currentImgIndex = 0;
     let numOfImages = $('.carousel-images').children().length - 1
 
-    $('.next').on('click', () => {
+    const scroll = () => {
         $('.carousel-images').children().eq(currentImgIndex).css('display', 'none')
         if (currentImgIndex < numOfImages) {
             currentImgIndex++
@@ -36,7 +36,11 @@ $(() => {
             currentImgIndex = 0
         }
         $('.carousel-images').children().eq(currentImgIndex).css('display', 'block')
-    })
+    }
+    setInterval(scroll, 7000);
+
+    $('.next').on('click', scroll)
+
     $('.previous').on('click', () => {
         $('.carousel-images').children().eq(currentImgIndex).css('display', 'none')
         if (currentImgIndex > 0) {

@@ -11,6 +11,7 @@ For the carousel, I used links from imgur to real life photos of Hayao Miyazaki.
 
 Instead of downloading and manually resizing/cropping the images, I opted instead to change their display to flex then align them in the center with overflow hidden. This served its purpose in allowing the user to cycle through photos with the carousel in the same place, although some of the images are cut off a bit due to the different aspect ratios. To remedy this, I set progressively larger max heights to media queries as the screen width increases, ensuring the larger photos have enough space to display.
 
+To create an autoscroll feature, I simply nested the "next button" event listener into its own function called scroll, then added a setInterval function call to it. I seperated the event listener out and made it so it calls the scroll function on click.
 
 
 <h2>Movie Buttons</h2>
