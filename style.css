@@ -93,6 +93,10 @@ body {
   font-family: 'Oswald', sans-serif;
   box-shadow: 4px 4px 10px var(--six);
 }
+.menu-button:hover {
+    background-color: var(--seven);
+    color: var(--three);
+}
 .menu {
   position: relative;
   display: inline-block;
@@ -112,6 +116,10 @@ body {
   text-decoration: none;
   display: block;
   font-family: 'Oswald', sans-serif;
+}
+.menu-content div:hover {
+    background-color: var(--seven);
+    color: var(--three);
 }
 #default, #new-to-old {
     border-bottom: none;

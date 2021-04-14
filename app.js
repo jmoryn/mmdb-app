@@ -6,7 +6,7 @@ $(() => {
         $('.collapsible-content').slideToggle('slow')
     })
 
-    // Carousel Code Start
+    // Carousel Start
     const $carouselContainer = $('<div>').addClass('carousel-container')
     $siteContainer.append($carouselContainer)
 
@@ -31,7 +31,7 @@ $(() => {
 
 
     let currentImgIndex = 0;
-    let numOfImages = $('.carousel-images').children().length - 1
+    let numOfImages = carouselImgLinks.length - 1
 
     const scroll = () => {
         $('.carousel-images').children().eq(currentImgIndex).css('display', 'none')
